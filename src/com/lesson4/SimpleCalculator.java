@@ -1,36 +1,50 @@
 package com.lesson4;
 
+/**
+SimpleCalculator -- define an instantiable class to perform arithmetic operations
+This example shows how to declare an instantiable class, and in particular:
+	-- how to declare instance variables/ fields
+	-- how to declare setter and getter methods corresponding to the instance variables
+	-- how to declare a method to return a value
+*/
+// declare a class named SimpleCalculator -- this is the instantiable class
 public class SimpleCalculator {
-	//declare instance variables
-	private double firstNumber;
-	private double secondNumber;
-	private double result;
-	
-	//declare action of our processing method
-	public void multiply(){
-		result = firstNumber*secondNumber;
-	}
-	
-	public void devide(){
-		result = firstNumber/secondNumber;
-	}
-	
-	public void display(){
-		System.out.println("our first number: " + firstNumber);
-		System.out.println("our second number: " + secondNumber);
-		System.out.println();
-	}
-	//declare setter method-to receive a value from the user
-	public void setFirstNumber(double number){
-		//store number in the firstNumber  of instance variable
-		firstNumber =number;
-	}
-	public void setSecondNumber(double num){
-		//store number in the secondNumber  of instance variable
-		secondNumber =num;
-	}
-	//getter method for instance result, which should retrieve/get the result of computing
-	public double getResult(){
-		return result;
-	}
+		// declare instance variables
+		// properties /state 
+		private double firstNumber; // will store the first number
+		private double secondNumber; // will store the second number
+		private double result; // will store the result of an arithmetic operation
+		private boolean isScientific; // an example of declaring an instance variable of type boolean
+		// declare behaviour/actions i.e. declare processing/computation methods
+		// declare a method to perform the multiplication
+		public void multiply(){
+			result = firstNumber * secondNumber;
+		}
+		// declare a method to perform the division
+		public void divide(){
+			result = firstNumber / secondNumber;
+		}
+		// this method is not required by the text of the problem, I implement it just to demonstrate the default values of the instance variables i.e. zero (0.0) for numbers
+		public void display(){
+			System.out.println(firstNumber);
+			System.out.println(secondNumber);
+			System.out.println();
+		}
+		// declare setter methods -- one setter method for each instance variable that needs to receive a value from the user
+		// declare a setter method to store a value into the firstNumber instance variable
+		public void setFirstNumber(double number){
+			// store the number in the firstNumber instance variable
+			firstNumber = number;
+		}
+		// declare setter method to set the value of the secondNumber instance variable
+		public void setSecondNumber(double n){
+			// store the value from n in the secondNumber instance variable
+			secondNumber = n;
+		}
+		// define getter methods -- one getter method for each instance variable whose value should be made available to other classes (for example, the CalculatorApp class)
+		// declare a getter method to be able to retrieve/get the result of the arithmetic computation	
+		public double getResult(){
+			// return the value stored in result instance variable
+			return result;
+		}		
 }
